@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class InvertedPlayerMovement : MonoBehaviour
 {
     private bool canMoveUp = true;
     private bool canMoveDown = true;
@@ -15,19 +15,19 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) && canMoveRight)
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && canMoveRight)
         {
             Move(Vector3.right);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) && canMoveLeft)
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && canMoveLeft)
         {
             Move(Vector3.left);
         }
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && canMoveUp)
+        else if (Input.GetKeyDown(KeyCode.DownArrow) && canMoveUp)
         {
             Move(Vector3.forward);
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow) && canMoveDown)
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && canMoveDown)
         {
             Move(Vector3.back);
         }
