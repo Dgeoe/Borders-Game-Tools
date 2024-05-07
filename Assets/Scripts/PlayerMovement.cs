@@ -12,16 +12,25 @@ public class PlayerMovement : MonoBehaviour
     private bool canMoveDownRight = true;
 
     public float moveSpeed = 1f;
+    public bool inverse = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightArrow) && canMoveRight)
+        if (Input.GetKeyDown(KeyCode.RightArrow) && canMoveRight && !inverse)
         {
             Move(Vector3.right);
         }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) && canMoveLeft)
+         else if (Input.GetKeyDown(KeyCode.RightArrow) && canMoveLeft && inverse)
         {
             Move(Vector3.left);
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && canMoveLeft && !inverse)
+        {
+            Move(Vector3.left);
+        }
+         else if (Input.GetKeyDown(KeyCode.LeftArrow) && canMoveRight && inverse)
+        {
+            Move(Vector3.right);
         }
         else if (Input.GetKeyDown(KeyCode.UpArrow) && canMoveUp)
         {
