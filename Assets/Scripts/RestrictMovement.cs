@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RestrictMovement : MonoBehaviour
 {
-    public enum RestrictionDirection { Up, Down, Left, Right, UpLeft, UpRight, DownLeft, DownRight };
+    public enum RestrictionDirection { Up, Down, Left, Right, UpLeft, UpRight, DownLeft, DownRight, Null, RightLeft, UpDown, UpDownRight, UpDownLeft, UpLeftRight, DownLeftRight };
     public RestrictionDirection restrictionDirection;
 
     private PlayerMovement playerMovement;
@@ -59,6 +59,26 @@ public class RestrictMovement : MonoBehaviour
             case RestrictionDirection.DownRight:
                 playerMovement.RestrictDownRight();
                 break;
+            case RestrictionDirection.Null:
+                break;
+            case RestrictionDirection.RightLeft:
+                playerMovement.RestrictRightLeft();
+                break;
+            case RestrictionDirection.UpDown:
+                playerMovement.RestrictUpDown();
+                break;
+            case RestrictionDirection.UpDownLeft:
+                playerMovement.RestrictUpDownLeft();
+                break;
+            case RestrictionDirection.UpDownRight:
+                playerMovement.RestrictUpDownRight();
+                break;
+            case RestrictionDirection.UpLeftRight:
+                playerMovement.RestrictUpRightLeft();
+                break;
+            case RestrictionDirection.DownLeftRight:
+                playerMovement.RestrictDownRightLeft();   
+                break;
         }
     }
 
@@ -89,6 +109,24 @@ public class RestrictMovement : MonoBehaviour
                 break;
             case RestrictionDirection.DownRight:
                 playerMovement.ReleaseDownRight();
+                break;
+            case RestrictionDirection.RightLeft:
+                playerMovement.ReleaseRightLeft();
+                break;
+            case RestrictionDirection.UpDown:
+                playerMovement.ReleaseUpDown();
+                break;
+            case RestrictionDirection.UpDownLeft:
+                playerMovement.ReleaseUpDownLeft();
+                break;
+            case RestrictionDirection.UpDownRight:
+                playerMovement.ReleaseUpDownRight();
+                break;
+            case RestrictionDirection.UpLeftRight:
+                playerMovement.ReleaseUpLeftRight();
+                break;
+            case RestrictionDirection.DownLeftRight:
+                playerMovement.ReleaseDownLeftRight();
                 break;
         }
     }
