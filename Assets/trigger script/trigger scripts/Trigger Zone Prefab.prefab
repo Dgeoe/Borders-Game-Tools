@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7238872682429281786}
-  - component: {fileID: 6913350866147518958}
   - component: {fileID: 8978323391544717310}
+  - component: {fileID: 4756183002322121180}
   m_Layer: 0
   m_Name: Trigger Zone Prefab
   m_TagString: Untagged
@@ -34,31 +34,6 @@ Transform:
   - {fileID: 6011845941835283972}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6913350866147518958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5526699277227157471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c2f8cc81ea4c3f4085eb53b92b41ba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enteredTrigger:
-    m_PersistentCalls:
-      m_Calls: []
-  exitedTrigger:
-    m_PersistentCalls:
-      m_Calls: []
-  stayInTrigger:
-    m_PersistentCalls:
-      m_Calls: []
-  completedTimer:
-    m_PersistentCalls:
-      m_Calls: []
-  bossHealth: 3
 --- !u!65 &8978323391544717310
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80,6 +55,30 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2, y: 2, z: 2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &4756183002322121180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526699277227157471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb8ee6f1f26251a4d8e87edf269d6382, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enteredTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  exitedTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  stayInTrigger:
+    m_PersistentCalls:
+      m_Calls: []
+  completedTimer:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8755660723608915470
 GameObject:
   m_ObjectHideFlags: 0
@@ -181,7 +180,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
