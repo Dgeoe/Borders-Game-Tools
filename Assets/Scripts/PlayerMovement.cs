@@ -6,10 +6,17 @@ public class PlayerMovement : MonoBehaviour
     private bool canMoveDown = true;
     private bool canMoveLeft = true;
     private bool canMoveRight = true;
-    private bool canMoveUpLeft = true;
-    private bool canMoveUpRight = true;
-    private bool canMoveDownLeft = true;
-    private bool canMoveDownRight = true;
+   // private bool canMoveUpLeft = true;
+   // private bool canMoveUpRight = true;
+   // private bool canMoveDownLeft = true;
+   // private bool canMoveDownRight = true;
+   // private bool canMoveNull = true;
+   // private bool canMoveRightLeft = true;
+   // private bool canMoveUpDown = true;
+   // private bool canMoveUpDownRight = true;
+   // private bool canMoveUpDownLeft = true;
+   // private bool canMoveUpLeftRight = true;
+   // private bool canMoveDownLeftRight = true;
 
     public float moveSpeed = 1f;
     public bool inverse = false;
@@ -91,6 +98,47 @@ public class PlayerMovement : MonoBehaviour
         canMoveRight = false;
     }
 
+    public void RestrictRightLeft()
+    {
+        canMoveLeft = false;
+        canMoveRight = false;
+    }
+
+    public void RestrictUpDown()
+    {
+        canMoveDown = false;
+        canMoveUp = false;
+    }
+
+    public void RestrictDownRightLeft()
+    {
+        canMoveDown = false;
+        canMoveRight = false;
+        canMoveLeft = false;
+    }
+
+    public void RestrictUpRightLeft()
+    {
+        canMoveUp = false;
+        canMoveRight = false;
+        canMoveLeft = false;
+    }
+
+    public void RestrictUpDownLeft()
+    {
+        canMoveUp = false;
+        canMoveDown = false;
+        canMoveLeft = false;
+    }
+
+    public void RestrictUpDownRight()
+    {
+        canMoveUp = false;
+        canMoveDown = false;
+        canMoveRight = false;
+    }
+
+//Release Restrictions 
     public void ReleaseUp()
     {
         canMoveUp = true;
@@ -134,4 +182,45 @@ public class PlayerMovement : MonoBehaviour
         canMoveDown = true;
         canMoveRight = true;
     }
+
+    public void ReleaseRightLeft()
+    {
+        canMoveRight = true;
+        canMoveLeft = true;
+    }
+
+    public void ReleaseUpDown()
+    {
+        canMoveDown = true;
+        canMoveUp = true;
+    }
+
+    public void ReleaseUpDownLeft()
+    {
+        canMoveDown = true;
+        canMoveUp = true;
+        canMoveLeft = true;
+    }
+
+    public void ReleaseUpDownRight()
+    {
+        canMoveDown = true;
+        canMoveUp = true;
+        canMoveRight = true;
+    }
+
+    public void ReleaseUpLeftRight()
+    {
+        canMoveRight = true;
+        canMoveUp = true;
+        canMoveLeft = true;
+    }
+
+    public void ReleaseDownLeftRight()
+    {
+        canMoveDown = true;
+        canMoveRight = true;
+        canMoveLeft = true;
+    }
+
 }
