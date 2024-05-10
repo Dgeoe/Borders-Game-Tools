@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Borders-Game.sln"
+    "dotnet.defaultSolution": "Borders-Game-Tools.sln"
 }
