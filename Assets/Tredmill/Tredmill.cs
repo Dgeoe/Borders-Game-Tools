@@ -3,41 +3,38 @@ using UnityEngine;
 public class Treadmill : MonoBehaviour
 {
     public enum Direction { Forward, Backward, Left, Right };
-    public Direction direction = Direction.Forward;
+    public Direction movementDirection = Direction.Forward;
 
-    public float forceMagnitude = 1f;
-
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            // Apply force based on the selected direction
-            ApplyForce(other.attachedRigidbody);
+            // Move the player 
+            MovePlayer(other.transform);
         }
     }
 
-    private void ApplyForce(Rigidbody2D rb)
+    private void MovePlayer(Transform playerTransform)
     {
-        Vector2 forceDirection = Vector2.zero;
+        Vector3 movementVector = Vector3.zero;
 
-        // Determine the force direction based on the selected direction
-        switch (direction)
+        switch (movementDirection)
         {
             case Direction.Forward:
-                forceDirection = Vector2.up;
+                movementVector = Vector3.forward;
                 break;
             case Direction.Backward:
-                forceDirection = Vector2.down;
+                movementVector = Vector3.back;
                 break;
             case Direction.Left:
-                forceDirection = Vector2.left;
+                movementVector = Vector3.left;
                 break;
             case Direction.Right:
-                forceDirection = Vector2.right;
+                movementVector = Vector3.right;
                 break;
         }
 
-        // Apply force to the player rigidbody
-        rb.AddForce(forceDirection * forceMagnitude, ForceMode2D.Impulse);
+        // Move the player in direction of arrow on treadmill
+        playerTransform.Translate(movementVector);
     }
-}
+} 
