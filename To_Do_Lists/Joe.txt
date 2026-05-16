@@ -1,0 +1,7 @@
+Web Build (embedded in webpage)
+Level Load in and out animation 
+Extra animations (doors, players)
+Main Menu
+UI
+Logo 
+Itch Page Design  
